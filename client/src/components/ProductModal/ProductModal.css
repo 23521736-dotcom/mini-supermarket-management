@@ -1,0 +1,221 @@
+/* ProductModal.css */
+.product-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.product-modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.product-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 24px 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.product-modal-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.product-modal-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.product-modal-category {
+    margin: 4px 0 0 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.product-modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.product-modal-close-btn:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+/* Product Image Section */
+.product-modal-image-section {
+    padding: 16px 24px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.product-modal-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Modal Body */
+.product-modal-body {
+    padding: 24px;
+}
+
+.product-modal-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.product-modal-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.product-modal-info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-modal-info-item.product-modal-full-width {
+    grid-column: 1 / -1;
+}
+
+.product-modal-info-item label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6b7280;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.product-modal-info-item p {
+    font-size: 0.875rem;
+    color: #111827;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Status Badge */
+.product-modal-status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+.product-modal-status-badge.in-stock {
+    background-color: #dcfce7;
+    color: #065f46;
+
+
+}
+
+.product-modal-status-badge.low-stock {
+    background-color: #dcfce7;
+    color: #92400e;
+
+
+}
+
+.product-modal-status-badge.out-of-stock {
+    background-color: #dcfce7;
+    color: #991b1b;
+
+
+}
+
+/* Modal Footer */
+.product-modal-footer {
+    padding: 16px 24px 24px 24px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.product-modal-edit-btn {
+    width: 100%;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.product-modal-edit-btn:hover {
+    background: #16a34a;
+    transform: translateY(-1px);
+}
+
+.product-modal-edit-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .product-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .product-modal-header,
+    .product-modal-body,
+    .product-modal-image-section {
+        padding: 16px;
+    }
+
+    .product-modal-footer {
+        padding: 12px 16px 16px 16px;
+    }
+
+    .product-modal-info-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .product-modal-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .product-modal-name {
+        font-size: 1.25rem;
+    }
+}

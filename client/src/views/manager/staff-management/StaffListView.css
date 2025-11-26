@@ -1,0 +1,489 @@
+.staff-report-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+}
+
+/* Header */
+.page-header {
+    background: white;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    margin: -2rem -2rem 0 -2rem;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.add-staff-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-staff-btn:hover {
+    background: #16a34a;
+}
+
+.add-icon {
+    font-size: 14px;
+}
+
+/* Filters */
+.filters-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1.5rem;
+    gap: 1rem;
+}
+
+.left-filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.search-container {
+    position: relative;
+    max-width: 300px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.search-container:hover .search-icon {
+    color: #22c55e;
+}
+
+.search-container:focus-within .search-icon {
+    color: #22c55e;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:hover {
+    border-color: #22c55e;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+    transform: translateY(-1px);
+}
+
+.search-input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1), 0 2px 8px rgba(34, 197, 94, 0.15);
+    transform: translateY(-1px);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.dropdown {
+    min-width: 150px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.filter-select {
+    padding: 12px 40px 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    min-width: 160px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-select:hover {
+    border-color: #22c55e;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+    transform: translateY(-1px);
+}
+
+.filter-select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1), 0 2px 8px rgba(34, 197, 94, 0.15);
+    transform: translateY(-1px);
+}
+
+.filter-select:active {
+    transform: translateY(0);
+}
+
+/* Style the option elements */
+.filter-select option {
+    padding: 12px 16px;
+    font-weight: 500;
+    color: #374151;
+    background: white;
+    line-height: 1.4;
+}
+
+.filter-select option:hover {
+    background-color: #f8fafc;
+}
+
+.filter-select option:checked {
+    background-color: #22c55e;
+    color: white;
+    font-weight: 600;
+}
+
+/* Add subtle animation when opening dropdown */
+@keyframes dropdownOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced dropdown container */
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .filter-select {
+    border-color: #22c55e;
+}
+
+/* Table */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    margin: 0 2rem;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-table thead th {
+    background: #f9fafb;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.staff-table tbody td {
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.staff-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.staff-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* Table cell specific styling */
+.staff-id {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.staff-name {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.staff-role,
+.staff-hours,
+.report-title {
+    color: #6b7280;
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.status-approved {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.status-declined {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.status-pending {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+/* Action buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.edit-btn:hover {
+    background: #fde68a;
+}
+
+.delete-btn {
+    background: #fecaca;
+    color: #ef4444;
+}
+
+.delete-btn:hover {
+    background: #fca5a5;
+}
+
+.view-btn {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.view-btn:hover {
+    background: #bfdbfe;
+}
+
+/* Pagination */
+.staff-pagination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem 2rem;
+}
+
+.staff-pagination-info {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.staff-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.staff-pagination-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.staff-pagination-btn:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.staff-pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.staff-page-numbers {
+    display: flex;
+    gap: 4px;
+    margin: 0 8px;
+}
+
+.staff-page-number {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.staff-page-number:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.staff-page-number.active {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}
+
+.staff-page-number.active:hover {
+    background: #16a34a;
+    border-color: #16a34a;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .filters-section {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+    }
+
+    .filter-dropdowns {
+        justify-content: space-between;
+    }
+
+    .table-container {
+        margin: 0 1rem;
+        overflow-x: auto;
+    }
+
+    .staff-table {
+        min-width: 700px;
+    }
+
+    .pagination-section {
+        padding: 1rem;
+    }
+
+    .page-header {
+        padding: 1.5rem 1rem 1rem;
+        margin: -2rem -2rem 0 -2rem;
+    }
+}
+
+/* Staff table specific styles */
+.staff-info .staff-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.staff-info .staff-join-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.staff-contact .staff-email {
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.staff-contact .staff-phone {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.staff-position {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+/* Add Staff button */
+.add-staff-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-staff-btn:hover {
+    background: #16a34a;
+}
+
+.add-icon {
+    font-size: 14px;
+}

@@ -1,0 +1,766 @@
+/* InvoiceDetail.css */
+
+.invoice-detail-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+.invoice-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.invoice-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Main Content Layout */
+.invoice-detail-content {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Form Container */
+.invoice-form-container {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Action Panel - Payment Summary */
+.invoice-action-panel {
+    background-color: white;
+    width: 320px;
+    position: sticky;
+    top: 2rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Sections */
+.invoice-form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.invoice-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.invoice-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.invoice-items-locked {
+    display: flex;
+    align-items: center;
+    background: #f3f4f6;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.invoice-customer-action-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+.invoice-customer-action-btn.add {
+    background: #22c55e;
+    color: white;
+}
+
+.invoice-customer-action-btn.add:hover {
+    background: #16a34a;
+}
+
+.invoice-customer-action-btn.edit {
+    background: #f59e0b;
+    color: white;
+}
+
+.invoice-customer-action-btn.edit:hover {
+    background: #d97706;
+}
+
+.invoice-action-icon {
+    font-size: 12px;
+}
+
+/* Promotion Action Button */
+.invoice-promotion-action-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+.invoice-promotion-action-btn.add {
+    background: #22c55e;
+    color: white;
+}
+
+.invoice-promotion-action-btn.add:hover {
+    background: #16a34a;
+}
+
+.invoice-promotion-action-btn.change {
+    background: #f59e0b;
+    color: white;
+}
+
+.invoice-promotion-action-btn.change:hover {
+    background: #d97706;
+}
+
+/* No Promotion State */
+.invoice-no-promotion {
+    text-align: center;
+    padding: 2rem;
+    background: #f9fafb;
+    border: 2px dashed #e5e7eb;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.invoice-no-promotion-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.invoice-no-promotion-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+}
+
+.invoice-no-promotion-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Remove Promotion Button */
+.invoice-remove-promotion-btn {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.invoice-remove-promotion-btn:hover {
+    background: #fecaca;
+    color: #b91c1c;
+}
+
+/* Product Table */
+.invoice-product-table {
+    margin-top: 1rem;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.invoice-table th {
+    background: #f9fafb;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.invoice-table th:first-child {
+    width: 45%;
+}
+
+.invoice-table th:nth-child(2) {
+    width: 15%;
+    text-align: center;
+}
+
+.invoice-table th:nth-child(3),
+.invoice-table th:nth-child(4) {
+    width: 20%;
+    text-align: right;
+}
+
+.invoice-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.invoice-table td:nth-child(2) {
+    text-align: center;
+}
+
+.invoice-table td:nth-child(3),
+.invoice-table td:nth-child(4) {
+    text-align: right;
+}
+
+/* Checkbox removed - product list is readonly */
+
+.invoice-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.invoice-product-name {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.875rem;
+}
+
+.invoice-product-category {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.invoice-quantity-readonly {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9fafb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.invoice-quantity {
+    min-width: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.invoice-price,
+.invoice-total {
+    font-weight: 500;
+    color: #1f2937;
+    text-align: right;
+    font-size: 0.875rem;
+}
+
+/* Remove button styles removed - product list is readonly */
+.invoice-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 2px solid #e5e7eb;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.invoice-subtotal-amount {
+    font-size: 1.125rem;
+    color: #22c55e;
+}
+
+/* Customer Information */
+.invoice-customer-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.invoice-customer-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.invoice-customer-details h3 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.invoice-customer-type {
+    margin: 0 0 2px 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.invoice-customer-contact {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* Discount Section */
+.invoice-discount-card {
+    margin-top: 24px;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.invoice-discount-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.invoice-discount-code {
+    display: flex;
+    gap: 8px;
+}
+
+.invoice-promo-code {
+    background: #1f2937;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.invoice-promo-type {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.invoice-discount-badge {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid #bbf7d0;
+}
+
+.invoice-discount-name {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.invoice-discount-description {
+    margin: 0 0 12px 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.invoice-discount-validity {
+    font-size: 0.75rem;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Payment Summary */
+.invoice-payment-summary {
+    padding: 1.5rem;
+}
+
+.invoice-summary-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+.invoice-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.invoice-summary-row.discount .invoice-discount-amount {
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.invoice-summary-row.total {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 12px;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.invoice-total-amount {
+    font-size: 1.25rem;
+    color: #22c55e;
+    font-weight: 700;
+}
+
+/* Payment Method */
+.invoice-payment-method {
+    margin-top: 1.5rem;
+    display: block;
+}
+
+.invoice-method-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+.invoice-payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.invoice-payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    color: #374151;
+    background: white;
+}
+
+.invoice-payment-option:hover {
+    border-color: #22c55e;
+}
+
+.invoice-payment-option.selected {
+    border-color: #22c55e;
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.invoice-payment-option.selected .invoice-payment-text {
+    color: #15803d;
+    font-weight: 600;
+}
+
+.invoice-payment-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #22c55e;
+}
+
+.invoice-payment-readonly {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-bottom: 20px;
+}
+
+.invoice-payment-display {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.invoice-payment-icon {
+    font-size: 1.25rem;
+}
+
+.invoice-payment-text {
+    font-weight: 500;
+    color: #1f2937;
+    font-size: 0.875rem;
+}
+
+.invoice-payment-note {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.invoice-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.invoice-confirm-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.invoice-confirm-btn:hover {
+    background: #16a34a;
+}
+
+.invoice-cancel-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.invoice-cancel-btn:hover {
+    background: #dc2626;
+}
+
+.invoice-back-btn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.invoice-back-btn:hover {
+    background: #f9fafb;
+    color: #374151;
+    border-color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .invoice-detail-content {
+        gap: 2rem;
+    }
+
+    .invoice-action-panel {
+        width: 280px;
+    }
+}
+
+@media (max-width: 968px) {
+    .invoice-detail-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .invoice-action-panel {
+        width: 100%;
+        position: static;
+    }
+
+    .invoice-page-header {
+        padding: 1.5rem;
+    }
+
+    .invoice-detail-content {
+        padding: 1.5rem;
+    }
+
+    .invoice-action-buttons {
+        gap: 8px;
+    }
+
+    .invoice-modal {
+        margin: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .invoice-form-section {
+        padding: 1.5rem;
+    }
+
+    .invoice-section-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .invoice-table {
+        font-size: 0.75rem;
+    }
+
+    .invoice-table th,
+    .invoice-table td {
+        padding: 8px;
+    }
+
+    .invoice-customer-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .invoice-payment-summary {
+        padding: 1rem;
+    }
+}
+
+/* Modal Styles */
+.invoice-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.invoice-modal {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.invoice-modal-header {
+    padding: 20px 24px 0;
+}
+
+.invoice-modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.invoice-modal-content {
+    padding: 16px 24px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.invoice-modal-content p {
+    margin: 0 0 8px 0;
+}
+
+.invoice-modal-actions {
+    padding: 20px 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.invoice-modal-cancel {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.invoice-modal-cancel:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+.invoice-modal-confirm {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.invoice-modal-confirm:hover {
+    background: #dc2626;
+}

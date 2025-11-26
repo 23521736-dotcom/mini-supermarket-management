@@ -1,0 +1,327 @@
+.add-customer-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+.customer-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.customer-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Add Customer Content Layout */
+.add-customer-content {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Form Container */
+.customer-form-container {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Action Panel */
+.customer-action-panel {
+    background-color: white;
+    width: 200px;
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+}
+
+.customer-action-panel .add-customer-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.customer-action-panel .add-customer-btn:hover:not(:disabled) {
+    background: #16a34a;
+}
+
+.customer-action-panel .add-customer-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.add-icon {
+    font-size: 14px;
+}
+
+.customer-action-panel .cancel-btn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.customer-action-panel .cancel-btn:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+/* Form Sections */
+.customer-form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #d1d5db;
+    margin-bottom: 1.5rem;
+}
+
+.customer-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+/* Form Layout */
+.customer-form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.customer-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.customer-form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-form-group.customer-full-width {
+    flex: 1 1 100%;
+}
+
+.customer-form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Elements */
+.customer-form-input,
+.customer-form-select,
+.customer-form-textarea {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+    font-size: 14px;
+    color: #374151;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    font-family: inherit;
+}
+
+.customer-form-input:focus,
+.customer-form-select:focus,
+.customer-form-textarea:focus {
+    border-color: #22c55e;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.customer-form-input::placeholder,
+.customer-form-textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Select Styles */
+.customer-form-select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%236b7280" d="m0 1 2 2 2-2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    padding-right: 48px;
+    cursor: pointer;
+}
+
+/* Textarea Styles */
+.customer-form-textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+/* Error Styles */
+.customer-form-input.error,
+.customer-form-select.error,
+.customer-form-textarea.error {
+    border-color: #ef4444;
+    background: #fef2f2;
+}
+
+.add-customer-error {
+    font-size: 12px;
+    color: #ef4444;
+    margin-top: 0.25rem;
+    font-weight: 500;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .add-customer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .customer-action-panel {
+        width: 100%;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        order: 2;
+    }
+
+    .customer-form-container {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-customer-view {
+        padding: 0 1rem;
+    }
+
+    .customer-page-header,
+    .add-customer-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .add-customer-content {
+        gap: 1.5rem;
+    }
+
+    .customer-form-section {
+        padding: 1.5rem;
+    }
+
+    .customer-form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .customer-form-group.customer-full-width {
+        flex: 1;
+    }
+
+    .customer-action-panel {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .customer-page-title {
+        font-size: 1.5rem;
+    }
+
+    .customer-section-title {
+        font-size: 1.125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .customer-page-header {
+        padding: 1rem;
+    }
+
+    .add-customer-content {
+        padding: 1rem;
+    }
+
+    .customer-form-section {
+        padding: 1rem;
+    }
+
+    .customer-form-row {
+        margin-bottom: 1rem;
+    }
+
+    .customer-section-title {
+        margin-bottom: 1rem;
+    }
+
+    .customer-form-input,
+    .customer-form-select,
+    .customer-form-textarea {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Focus States for Accessibility */
+.customer-action-panel .add-customer-btn:focus,
+.customer-action-panel .cancel-btn:focus {
+    outline: 2px solid #22c55e;
+    outline-offset: 2px;
+}
+
+.customer-form-input:focus,
+.customer-form-select:focus,
+.customer-form-textarea:focus {
+    outline: none;
+}

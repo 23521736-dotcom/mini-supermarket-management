@@ -1,0 +1,32 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.layout-content {
+    flex: 1;
+    margin-left: 280px;
+    background: #f9fafb;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    padding: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .layout-content {
+        margin-left: 0;
+    }
+}
+
+/* Compact mode for smaller screens */
+@media (max-width: 1024px) {
+    .layout-content {
+        margin-left: 240px;
+    }
+}

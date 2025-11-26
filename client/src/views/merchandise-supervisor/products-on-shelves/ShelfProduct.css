@@ -1,0 +1,547 @@
+.shelf-product-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+}
+
+/* Header */
+.shelf-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.shelf-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Stats Section */
+.shelf-stats-section {
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+.shelf-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.shelf-stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+}
+
+.shelf-stat-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.shelf-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+}
+
+.shelf-stat-icon.shelf-total {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.shelf-stat-icon.shelf-value {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.shelf-stat-icon.shelf-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.shelf-stat-icon.shelf-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.shelf-stat-content {
+    flex: 1;
+}
+
+.shelf-stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.shelf-stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Filters Section */
+.shelf-filters-section {
+    padding: 2rem;
+    background: white;
+    margin: 0 2rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.shelf-search-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.shelf-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.shelf-search-container:hover .shelf-search-icon {
+    color: #22c55e;
+}
+
+.shelf-search-container:focus-within .shelf-search-icon {
+    color: #22c55e;
+}
+
+.shelf-search-input {
+    width: 100%;
+    padding: 12px 16px 12px 40px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shelf-search-input:hover {
+    border-color: #22c55e;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+}
+
+.shelf-search-input:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1), 0 2px 8px rgba(34, 197, 94, 0.15);
+}
+
+.shelf-search-input::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.shelf-filter-grid {
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.shelf-filter-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .shelf-filter-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+
+.shelf-filter-select {
+    appearance: none;
+    padding: 12px 40px 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    background: white url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%239ca3af" d="m0 1 2 2 2-2z"/></svg>') no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shelf-filter-select:hover {
+    border-color: #22c55e;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.15);
+}
+
+.shelf-filter-select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1), 0 2px 8px rgba(34, 197, 94, 0.15);
+}
+
+.shelf-action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+}
+
+.shelf-add-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.shelf-add-btn:hover {
+    background: #2563eb;
+}
+
+.shelf-add-icon {
+    font-size: 14px;
+}
+
+.shelf-clear-btn {
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #6b7280;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.shelf-clear-btn:hover {
+    background: #f9fafb;
+    color: #374151;
+    border-color: #9ca3af;
+}
+
+/* Table */
+.shelf-table-container {
+    background: white;
+    border-radius: 12px;
+    margin: 0 2rem;
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.shelf-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.shelf-table thead th {
+    background: #f9fafb;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.shelf-table tbody td {
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 14px;
+    color: #374151;
+    vertical-align: middle;
+}
+
+.shelf-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.shelf-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.shelf-product-id-cell {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.shelf-product-name-cell {
+    max-width: 250px;
+}
+
+.shelf-product-name {
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.shelf-location-info {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.shelf-product-category {
+    min-width: 120px;
+}
+
+.shelf-category {
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+.shelf-brand {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.shelf-product-price {
+    font-weight: 600;
+    color: #22c55e;
+    font-size: 15px;
+}
+
+.shelf-stock-info {
+    min-width: 80px;
+}
+
+.shelf-stock-number {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 2px;
+}
+
+.shelf-stock-threshold {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Status Badges */
+.shelf-status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.shelf-status-badge.shelf-status-approved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.shelf-status-badge.shelf-status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.shelf-status-badge.shelf-status-declined {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.shelf-status-badge.shelf-status-default {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* Action Buttons */
+.shelf-action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.shelf-action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 12px;
+}
+
+.shelf-view-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.shelf-view-btn:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+.shelf-edit-btn {
+    background: #10b981;
+    color: white;
+}
+
+.shelf-edit-btn:hover {
+    background: #059669;
+    transform: translateY(-1px);
+}
+
+.shelf-delete-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.shelf-delete-btn:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* Pagination */
+.shelf-pagination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.shelf-pagination-info {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.shelf-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shelf-pagination-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #374151;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.shelf-pagination-btn:hover:not(:disabled) {
+    border-color: #22c55e;
+    color: #22c55e;
+}
+
+.shelf-pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.shelf-page-numbers {
+    display: flex;
+    gap: 4px;
+}
+
+.shelf-page-number {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #374151;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.shelf-page-number:hover {
+    border-color: #22c55e;
+    color: #22c55e;
+}
+
+.shelf-page-number.active {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .shelf-filter-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .shelf-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shelf-filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shelf-filters-section,
+    .shelf-stats-section {
+        padding: 1rem;
+        margin: 0 1rem 1rem;
+    }
+
+    .shelf-table-container {
+        margin: 0 1rem;
+        overflow-x: auto;
+    }
+
+    .shelf-table {
+        min-width: 800px;
+    }
+
+    .shelf-pagination-section {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .shelf-pagination-controls {
+        justify-content: center;
+    }
+}

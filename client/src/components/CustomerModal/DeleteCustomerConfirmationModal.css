@@ -1,0 +1,194 @@
+/* DeleteCustomerConfirmationModal.css */
+.delete-customer-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.delete-customer-modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header */
+.delete-customer-modal-header {
+    padding: 20px 24px 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.delete-customer-modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Body */
+.delete-customer-modal-body {
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.customer-warning-icon {
+    flex-shrink: 0;
+}
+
+.customer-triangle-warning {
+    width: 50px;
+    height: 44px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.customer-triangle-warning::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 42px solid #6b7280;
+    position: absolute;
+}
+
+.customer-triangle-warning span {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1;
+    bottom: 8px;
+}
+
+.delete-customer-message {
+    margin-top: 10px;
+    flex: 1;
+}
+
+.delete-customer-message p {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.customer-name-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Footer */
+.delete-customer-modal-footer {
+    padding: 4px 24px 16px 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.delete-customer-btn-no,
+.delete-customer-btn-yes {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.delete-customer-btn-no {
+    background-color: #ef4444;
+    color: white;
+}
+
+.delete-customer-btn-no:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+.delete-customer-btn-yes {
+    background-color: #22c55e;
+    color: white;
+}
+
+.delete-customer-btn-yes:hover {
+    background-color: #16a34a;
+    transform: translateY(-1px);
+}
+
+.delete-customer-btn-no:active,
+.delete-customer-btn-yes:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .delete-customer-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .delete-customer-modal-header,
+    .delete-customer-modal-body,
+    .delete-customer-modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .delete-customer-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .delete-customer-btn-no,
+    .delete-customer-btn-yes {
+        width: 100%;
+    }
+}
+
+/* Animation */
+.delete-customer-modal-overlay {
+    animation: fadeIn 0.2s ease-out;
+}
+
+.delete-customer-modal-content {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,185 @@
+.signin-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%);
+    padding: 20px;
+}
+
+.signin-card {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #f0f0f0;
+}
+
+.tab-switcher {
+    display: flex;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 4px;
+    margin: 2rem 0;
+    gap: 4px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.tab-button:hover {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.tab-button.active {
+    background: #22c55e;
+    color: white;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+}
+
+.signin-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.forgot-password {
+    color: #22c55e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signin-button {
+    margin-bottom: 1.5rem;
+}
+
+.signin-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 14px;
+}
+
+.contact-admin {
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.contact-admin.disabled {
+    pointer-events: none;
+}
+
+.contact-admin:hover {
+    text-decoration: underline;
+}
+
+.contact-admin.disabled:hover {
+    text-decoration: none;
+}
+
+/* Demo Accounts Section */
+.demo-accounts {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.demo-accounts h4 {
+    margin: 0 0 1rem 0;
+    color: #495057;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.accounts-grid {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.account-item:hover {
+    border-color: #22c55e;
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+}
+
+.account-item strong {
+    color: #22c55e;
+    margin-right: 0.5rem;
+    min-width: 80px;
+}
+
+@media (max-width: 480px) {
+    .signin-card {
+        padding: 2rem 1.5rem;
+        margin: 10px;
+    }
+
+    .demo-accounts {
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
+
+    .account-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .account-item strong {
+        min-width: unset;
+    }
+}

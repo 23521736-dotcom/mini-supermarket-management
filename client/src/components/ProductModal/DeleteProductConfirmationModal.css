@@ -1,0 +1,163 @@
+/* DeleteProductConfirmationModal.css */
+.delete-product-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.delete-product-modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header */
+.delete-product-modal-header {
+    padding: 20px 24px 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.delete-product-modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Body */
+.delete-product-modal-body {
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.warning-icon {
+    flex-shrink: 0;
+}
+
+.triangle-warning {
+    width: 50px;
+    height: 44px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.triangle-warning::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 42px solid #6b7280;
+    position: absolute;
+}
+
+.triangle-warning span {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1;
+    bottom: 8px;
+}
+
+.delete-message {
+    margin-top: 10px;
+    flex: 1;
+}
+
+.delete-message p {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.product-name-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Footer */
+.delete-product-modal-footer {
+    padding: 4px 24px 16px 24px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.delete-product-btn-no,
+.delete-product-btn-yes {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+}
+
+.delete-product-btn-no {
+    background-color: #ef4444;
+    color: white;
+}
+
+.delete-product-btn-no:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+.delete-product-btn-yes {
+    background-color: #22c55e;
+    color: white;
+}
+
+.delete-product-btn-yes:hover {
+    background-color: #16a34a;
+    transform: translateY(-1px);
+}
+
+.delete-product-btn-no:active,
+.delete-product-btn-yes:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .delete-product-modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .delete-product-modal-header,
+    .delete-product-modal-body,
+    .delete-product-modal-footer {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .delete-product-modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .delete-product-btn-no,
+    .delete-product-btn-yes {
+        width: 100%;
+    }
+}

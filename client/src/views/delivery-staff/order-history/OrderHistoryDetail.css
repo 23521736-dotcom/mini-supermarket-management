@@ -1,0 +1,496 @@
+.history-detail-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+.history-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.history-back-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history-back-button:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+.history-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Quick Actions Panel */
+.history-quick-actions-panel .history-cancel-btn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.history-quick-actions-panel .history-cancel-btn:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+.history-action-icon {
+    font-size: 14px;
+}
+
+/* Order Detail Content Layout */
+.history-detail-content {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Order Info Container */
+.history-info-container {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Quick Actions Panel */
+.history-quick-actions-panel {
+    background-color: white;
+    width: 200px;
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+}
+
+/* Order Sections */
+.history-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.history-section:last-child {
+    margin-bottom: 0;
+}
+
+/* Section Titles */
+.history-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1.5rem 0;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.75rem;
+}
+
+/* Order Header Info */
+.history-header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.history-id-section {
+    flex: 0 0 auto;
+}
+
+.history-id {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0 0 0.5rem 0;
+}
+
+.history-id-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.history-dates {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.history-date-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 140px;
+}
+
+.history-date-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.history-date-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.history-delivered-date {
+    color: #22c55e;
+}
+
+.history-amount-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #22c55e;
+}
+
+/* Customer Details */
+.history-customer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.history-customer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+.history-customer-icon {
+    width: 20px;
+    height: 20px;
+    color: white;
+    border-radius: 50%;
+    padding: 8px;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.history-customer-item:nth-child(1) .history-customer-icon {
+    background: #22c55e;
+}
+
+.history-customer-item:nth-child(2) .history-customer-icon {
+    background: #3b82f6;
+}
+
+.history-customer-item:nth-child(3) .history-customer-icon {
+    background: #8b5cf6;
+}
+
+.history-customer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.history-info-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.history-info-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.history-map-button {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.history-map-button:hover {
+    background: #7c3aed;
+}
+
+/* Delivery Notes */
+.history-delivery-notes {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.history-notes-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.history-notes-icon {
+    color: #3b82f6;
+    font-size: 1rem;
+}
+
+.history-notes-title {
+    font-weight: 600;
+    color: #1e40af;
+}
+
+.history-notes-text {
+    margin: 0;
+    color: #1e40af;
+    line-height: 1.5;
+}
+
+/* Order Items */
+.history-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-item-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.history-item-row:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.history-item-icon {
+    width: 48px;
+    height: 48px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.history-item-details {
+    flex: 1;
+}
+
+.history-item-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.history-item-category {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.history-item-price {
+    font-size: 0.875rem;
+    color: #22c55e;
+    font-weight: 500;
+}
+
+.history-item-quantity {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    min-width: 80px;
+}
+
+.history-quantity-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.history-quantity-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.history-item-total {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #22c55e;
+}
+
+/* Pricing Summary */
+.history-pricing-summary {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9fafb;
+}
+
+.history-pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.history-pricing-row:last-child {
+    margin-bottom: 0;
+}
+
+.history-total-row {
+    border-top: 1px solid #d1d5db;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.history-pricing-label {
+    font-size: 1rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.history-total-row .history-pricing-label {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.history-pricing-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.history-total-row .history-pricing-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #22c55e;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .history-detail-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .history-quick-actions-panel {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .history-quick-actions-panel button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-page-header {
+        padding: 1rem;
+    }
+
+    .history-page-title {
+        font-size: 1.5rem;
+    }
+
+    .history-detail-content {
+        padding: 1rem;
+    }
+
+    .history-section {
+        padding: 1.5rem;
+    }
+
+    .history-header-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .history-dates {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .history-date-item {
+        align-items: flex-start;
+        min-width: auto;
+    }
+
+    .history-customer-item {
+        flex-wrap: wrap;
+    }
+
+    .history-map-button {
+        position: static;
+        align-self: flex-start;
+        margin-top: 0.5rem;
+    }
+
+    .history-quick-actions-panel {
+        flex-direction: column;
+    }
+
+    .history-item-row {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .history-item-quantity {
+        min-width: auto;
+        align-items: flex-start;
+    }
+}

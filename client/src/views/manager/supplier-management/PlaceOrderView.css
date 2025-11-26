@@ -1,0 +1,328 @@
+/* PlaceOrderView.css */
+.place-order-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+.place-order-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.place-order-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Place Order Content Layout */
+.place-order-content {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Form Container */
+.place-order-form-container {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Action Panel */
+.place-order-action-panel {
+    background-color: white;
+    width: 280px;
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+}
+
+/* Order Summary */
+.place-order-summary {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.place-order-summary-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+/* Action Buttons */
+.place-order-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.place-order-btn:hover {
+    background: #16a34a;
+}
+
+.place-order-icon {
+    font-size: 14px;
+}
+
+.place-order-cancel-btn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.place-order-cancel-btn:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+/* Form Sections */
+.place-order-form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.place-order-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Form Layout */
+.place-order-form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.place-order-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.place-order-form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.place-order-form-group.place-order-full-width {
+    flex: 1 1 100%;
+}
+
+/* Form Elements */
+.place-order-form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.place-order-form-input,
+.place-order-form-select {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.place-order-form-input:focus,
+.place-order-form-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.place-order-form-input::placeholder {
+    color: #9ca3af;
+}
+
+.place-order-form-textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.place-order-form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.place-order-form-textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Select dropdown styling */
+.place-order-form-select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+    appearance: none;
+}
+
+/* Product Table Styling */
+.place-order-product-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+}
+
+.place-order-product-table thead {
+    background-color: #f9fafb;
+}
+
+.place-order-product-table th,
+.place-order-product-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.place-order-product-table th {
+    font-weight: 600;
+    color: #374151;
+}
+
+.place-order-product-table td {
+    color: #1f2937;
+}
+
+.place-order-quantity-input {
+    width: 60px;
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.place-order-remove-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.place-order-add-product-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .place-order-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .place-order-action-panel {
+        width: 100%;
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .place-order-content {
+        padding: 1rem;
+    }
+
+    .place-order-page-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .place-order-form-section {
+        padding: 1.5rem;
+    }
+
+    .place-order-form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .place-order-action-panel {
+        flex-direction: row;
+        order: -1;
+        margin-bottom: 1rem;
+    }
+
+    .place-order-page-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .place-order-action-panel {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .place-order-btn,
+    .place-order-cancel-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

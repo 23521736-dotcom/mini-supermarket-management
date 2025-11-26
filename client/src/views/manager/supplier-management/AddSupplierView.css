@@ -1,0 +1,318 @@
+/* AddSupplierView.css */
+.add-supplier-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+.supplier-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.supplier-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+/* Main Content Layout */
+.add-supplier-content {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Form Container */
+.supplier-form-container {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Action Panel */
+.supplier-action-panel {
+    background-color: white;
+    width: 280px;
+    position: sticky;
+    top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.supplier-status-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.supplier-status-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+.supplier-status-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.supplier-status-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.supplier-status-select {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+    appearance: none;
+}
+
+.supplier-status-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.create-supplier-btn {
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+.create-supplier-btn:hover {
+    background: #16a34a;
+}
+
+.supplier-cancel-btn {
+    background: transparent;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.supplier-cancel-btn:hover {
+    background: #f9fafb;
+    color: #374151;
+}
+
+/* Form Sections */
+.supplier-form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.supplier-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Form Layout */
+.supplier-form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.supplier-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.supplier-form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.supplier-form-group.supplier-full-width {
+    flex: 1 1 100%;
+}
+
+/* Form Elements */
+.supplier-form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.supplier-form-input,
+.supplier-form-select {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.supplier-form-input:focus,
+.supplier-form-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.supplier-form-input::placeholder {
+    color: #9ca3af;
+}
+
+.supplier-form-textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.supplier-form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.supplier-form-textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Select dropdown styling */
+.supplier-form-select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+    appearance: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-supplier-content {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .supplier-action-panel {
+        width: 100%;
+        position: static;
+        order: -1;
+        margin-bottom: 1rem;
+    }
+
+    .supplier-status-section {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .supplier-status-group {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .create-supplier-btn,
+    .supplier-cancel-btn {
+        width: auto;
+        min-width: 120px;
+        margin-bottom: 0;
+    }
+
+    .create-supplier-btn {
+        margin-right: 0.75rem;
+    }
+
+    .supplier-form-container {
+        padding: 0;
+    }
+
+    .supplier-form-section {
+        padding: 1.5rem;
+    }
+
+    .supplier-form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .supplier-form-group.supplier-full-width {
+        flex: 1;
+    }
+
+    .supplier-page-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .supplier-status-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .supplier-status-group {
+        flex: none;
+    }
+
+    .create-supplier-btn,
+    .supplier-cancel-btn {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    .supplier-cancel-btn {
+        margin-bottom: 0;
+    }
+}

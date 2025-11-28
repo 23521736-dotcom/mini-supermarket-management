@@ -166,6 +166,7 @@ const DamagedProduct = () => {
   const handleEdit = (productId) => {
     console.log("Edit product:", productId);
     // Add edit functionality here
+    navigate(`/damaged-product/edit/${productId}`);
   };
 
   const handleRecordDamaged = () => {

@@ -1,0 +1,620 @@
+/* Add Shelf Product View */
+.add-shelf-view {
+    padding: 2rem;
+    background: #EFFFE8;
+    min-height: 100vh;
+}
+
+/* Header */
+.add-shelf-header {
+    background: transparent;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-shelf-title-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add-shelf-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.add-shelf-back-btn:hover {
+    background: #3b82f6;
+    border-color: #2563eb;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.add-shelf-back-btn:active {
+    transform: translateY(0);
+}
+
+.add-shelf-back-icon {
+    font-size: 0.875rem;
+    transition: transform 0.2s;
+}
+
+.add-shelf-back-btn:hover .add-shelf-back-icon {
+    transform: translateX(-2px);
+}
+
+.add-shelf-page-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.add-shelf-page-subtitle {
+    color: #6b7280;
+    margin: 0.25rem 0 0 0;
+    font-size: 1rem;
+}
+
+/* Main Content Layout */
+.add-shelf-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Panel Styling */
+.add-shelf-left-panel,
+.add-shelf-right-panel {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.add-shelf-panel-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.add-shelf-panel-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.add-shelf-selected-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.add-shelf-selected-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #065f46;
+}
+
+.add-shelf-check-icon {
+    color: #10b981;
+}
+
+/* Filters */
+.add-shelf-filters {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.add-shelf-search-container {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.add-shelf-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.add-shelf-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.add-shelf-search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-shelf-filter-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+.add-shelf-filter-select {
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-shelf-filter-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Tables */
+.add-shelf-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.add-shelf-product-table,
+.add-shelf-shelf-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.add-shelf-product-table th,
+.add-shelf-shelf-table th {
+    background: #f3f4f6;
+    color: #374151;
+    font-weight: 600;
+    padding: 1rem 0.75rem;
+    text-align: left;
+    border-bottom: 2px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.add-shelf-product-table td,
+.add-shelf-shelf-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+.add-shelf-product-table tr:hover,
+.add-shelf-shelf-table tr:hover {
+    background: #f9fafb;
+}
+
+.add-shelf-product-table .selected-row,
+.add-shelf-shelf-table .selected-row {
+    background: #dbeafe;
+    border-left: 4px solid #3b82f6;
+}
+
+.add-shelf-product-table .fully-shelved-row {
+    background: #f9fafb;
+    opacity: 0.6;
+    color: #9ca3af;
+}
+
+.add-shelf-product-table .fully-shelved-row:hover {
+    background: #f3f4f6;
+}
+
+.add-shelf-checkbox,
+.add-shelf-radio {
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.add-shelf-checkbox.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.add-shelf-fully-shelved-text {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-style: italic;
+    text-align: center;
+    display: block;
+    padding: 0.5rem;
+    background: #f9fafb;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.add-shelf-product-id,
+.add-shelf-shelf-id {
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.add-shelf-product-name,
+.add-shelf-shelf-name {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.add-shelf-product-price {
+    font-weight: 600;
+    color: #059669;
+}
+
+.add-shelf-quantity-info {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    text-align: center;
+}
+
+.add-shelf-quantity-input-cell {
+    text-align: center;
+    width: 120px;
+}
+
+.add-shelf-quantity-input {
+    width: 80px;
+    padding: 0.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.add-shelf-quantity-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-shelf-quantity-input:disabled {
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.add-shelf-available {
+    text-align: center;
+    font-weight: 600;
+}
+
+.add-shelf-available .positive {
+    color: #059669;
+}
+
+.add-shelf-available .zero {
+    color: #dc2626;
+}
+
+/* Status Badges */
+.add-shelf-status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+.add-shelf-status-badge.in-stock {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.add-shelf-status-badge.low-stock {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.add-shelf-status-badge.out-stock {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Capacity Bar */
+.add-shelf-capacity-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.add-shelf-capacity-bar {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.add-shelf-capacity-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981 0%, #059669 50%, #dc2626 100%);
+    transition: width 0.3s ease;
+}
+
+/* Pagination */
+.add-shelf-pagination-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.add-shelf-pagination-info {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.add-shelf-pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-shelf-pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    color: #6b7280;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-shelf-pagination-btn:hover:not(:disabled) {
+    background: #3b82f6;
+    border-color: #2563eb;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.add-shelf-pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.add-shelf-page-numbers {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.add-shelf-page-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    color: #6b7280;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-shelf-page-btn:hover {
+    background: #3b82f6;
+    border-color: #2563eb;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.add-shelf-page-btn.active {
+    background: #3b82f6;
+    border-color: #2563eb;
+    color: white;
+    font-weight: 600;
+}
+
+/* Action Bar */
+.add-shelf-action-bar {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.add-shelf-capacity-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.add-shelf-capacity-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.add-shelf-capacity-status.within-capacity {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.add-shelf-capacity-status.over-capacity {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    animation: pulse-warning 2s infinite;
+}
+
+@keyframes pulse-warning {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.add-shelf-capacity-icon {
+    font-size: 0.875rem;
+}
+
+.add-shelf-warning-icon {
+    font-size: 0.875rem;
+    color: #dc2626;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.add-shelf-capacity-text {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.add-shelf-add-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.add-shelf-add-btn:hover:not(.disabled) {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.add-shelf-add-btn:active:not(.disabled) {
+    transform: translateY(0);
+}
+
+.add-shelf-add-btn.disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.add-shelf-add-icon {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .add-shelf-main-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .add-shelf-view {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .add-shelf-filter-row {
+        grid-template-columns: 1fr;
+    }
+
+    .add-shelf-table-container {
+        overflow-x: auto;
+    }
+
+    .add-shelf-product-table,
+    .add-shelf-shelf-table {
+        min-width: 600px;
+    }
+
+    .add-shelf-pagination-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .add-shelf-action-bar {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+    }
+}

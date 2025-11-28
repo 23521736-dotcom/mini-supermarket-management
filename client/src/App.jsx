@@ -34,7 +34,9 @@ import InvoiceListView from "./views/cashier/invoice-management/InvoiceListView"
 import InvoiceDetail from "./views/cashier/invoice-management/InvoiceDetail";
 import PromotionSelection from "./views/cashier/invoice-management/PromotionSelection";
 import RecordDamagedProduct from "./views/merchandise-supervisor/damaged-products/RecordDamagedProduct";
-
+import AddShelfProduct from "./views/merchandise-supervisor/products-on-shelves/AddShelfProduct";
+import EditDamagedProduct from "./views/merchandise-supervisor/damaged-products/EditDamagedProduct";
+import EditShelfProduct from "./views/merchandise-supervisor/products-on-shelves/EditShelfProduct";
 function App() {
   return (
     <Router>
@@ -210,10 +212,37 @@ function App() {
           />
 
           <Route
+            path="/damaged-product/edit/:id"
+            element={
+              <Layout>
+                <EditDamagedProduct />
+              </Layout>
+            }
+          />
+
+          <Route
             path="/shelf-product"
             element={
               <Layout>
                 <ShelfProduct />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/shelf-product/add"
+            element={
+              <Layout>
+                <AddShelfProduct />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/shelf-product/edit/:combinedId"
+            element={
+              <Layout>
+                <EditShelfProduct />
               </Layout>
             }
           />

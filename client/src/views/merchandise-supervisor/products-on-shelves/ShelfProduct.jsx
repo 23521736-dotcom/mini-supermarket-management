@@ -11,8 +11,10 @@ import {
 } from "react-icons/fa";
 import { TbBoxOff } from "react-icons/tb";
 import "./ShelfProduct.css";
+import { useNavigate } from "react-router-dom";
 
 const ShelfProduct = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [supplierFilter, setSupplierFilter] = useState("All suppliers");
   const [shelfLocationFilter, setShelfLocationFilter] =
@@ -276,21 +278,16 @@ const ShelfProduct = () => {
     statusFilter,
   ]);
 
-  const handleView = (productId, shelfLocation) => {
-    console.log("View product:", productId, "at location:", shelfLocation);
-  };
-
   const handleEdit = (productId, shelfLocation) => {
     console.log("Edit product:", productId, "at location:", shelfLocation);
-  };
-
-  const handleDelete = (productId, shelfLocation) => {
-    console.log("Delete product:", productId, "at location:", shelfLocation);
+    const editUrl = `/shelf-product/edit/${productId}-${shelfLocation}`;
+    console.log("Navigating to:", editUrl);
+    navigate(editUrl);
   };
 
   const handleAddProduct = () => {
     console.log("Add new product");
-    // Add navigation or modal logic here
+    navigate("./add");
   };
 
   const getStockBadgeClass = (status) => {
@@ -478,7 +475,7 @@ const ShelfProduct = () => {
         <div className="shelf-action-buttons">
           <button onClick={handleAddProduct} className="shelf-add-btn">
             <FaPlus className="shelf-add-icon" />
-            Add Product
+            Arrange products
           </button>
 
           <button
@@ -552,15 +549,6 @@ const ShelfProduct = () => {
                 <td>
                   <div className="shelf-action-buttons">
                     <button
-                      className="shelf-action-btn shelf-view-btn"
-                      onClick={() =>
-                        handleView(product.id, product.shelfLocation)
-                      }
-                      title="View Details"
-                    >
-                      <FaEye />
-                    </button>
-                    <button
                       className="shelf-action-btn shelf-edit-btn"
                       onClick={() =>
                         handleEdit(product.id, product.shelfLocation)
@@ -568,15 +556,6 @@ const ShelfProduct = () => {
                       title="Edit Product"
                     >
                       <FaEdit />
-                    </button>
-                    <button
-                      className="shelf-action-btn shelf-delete-btn"
-                      onClick={() =>
-                        handleDelete(product.id, product.shelfLocation)
-                      }
-                      title="Delete Product"
-                    >
-                      <FaTrash />
                     </button>
                   </div>
                 </td>

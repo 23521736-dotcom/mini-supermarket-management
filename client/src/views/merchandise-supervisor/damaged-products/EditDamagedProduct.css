@@ -1,0 +1,428 @@
+/* Edit Damaged Product View */
+.edit-damaged-product-view {
+    padding: 0;
+    background: #EFFFE8;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+.edit-damaged-product-page-header {
+    background: transparent;
+    padding: 2rem 2rem 1rem;
+    margin: 0;
+    width: 100%;
+}
+
+.edit-damaged-product-page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+}
+
+.edit-damaged-product-page-subtitle {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Content Layout */
+.edit-damaged-product-content {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Form Container */
+.edit-damaged-product-form-container {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form Sections */
+.edit-damaged-product-form-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.edit-damaged-product-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.edit-damaged-product-section-icon {
+    color: #ef4444;
+    font-size: 1.125rem;
+}
+
+.edit-damaged-product-section-icon.damage-icon {
+    color: #dc2626;
+}
+
+/* Form Rows and Groups */
+.edit-damaged-product-form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.edit-damaged-product-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.edit-damaged-product-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-damaged-product-form-group.edit-damaged-product-full-width {
+    grid-column: 1 / -1;
+}
+
+.edit-damaged-product-form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Inputs */
+.edit-damaged-product-form-input {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white;
+}
+
+.edit-damaged-product-form-input:focus {
+    outline: none;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.edit-damaged-product-form-input.readonly {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.edit-damaged-product-form-select {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white;
+    cursor: pointer;
+}
+
+.edit-damaged-product-form-select:focus {
+    outline: none;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.edit-damaged-product-form-textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.edit-damaged-product-form-textarea:focus {
+    outline: none;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Sidebar */
+.edit-damaged-product-sidebar {
+    width: 320px;
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Status Section */
+.edit-damaged-product-status-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.edit-damaged-product-status-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+.edit-damaged-product-status-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.edit-damaged-product-status-item:last-child {
+    margin-bottom: 0;
+}
+
+.edit-damaged-product-status-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.edit-damaged-product-status-value {
+    font-size: 0.875rem;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.edit-damaged-product-status-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    width: fit-content;
+}
+
+.edit-damaged-product-status-badge.pending {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #f87171;
+}
+
+.edit-damaged-product-status-badge.resolved {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #22c55e;
+}
+
+/* Actions Section */
+.edit-damaged-product-actions-section {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.edit-damaged-product-actions-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+}
+
+.edit-damaged-product-status-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Buttons */
+.edit-damaged-product-resolve-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-damaged-product-resolve-btn:hover {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.edit-damaged-product-resolve-btn:active {
+    transform: translateY(0);
+}
+
+.edit-damaged-product-resolve-icon {
+    font-size: 1rem;
+}
+
+.edit-damaged-product-update-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-damaged-product-update-btn:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.edit-damaged-product-update-btn:active {
+    transform: translateY(0);
+}
+
+.edit-damaged-product-update-icon {
+    font-size: 1rem;
+}
+
+.edit-damaged-product-cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit-damaged-product-cancel-btn:hover {
+    background: #e5e7eb;
+    color: #4b5563;
+    border-color: #9ca3af;
+}
+
+.edit-damaged-product-cancel-icon {
+    font-size: 0.875rem;
+}
+
+/* Resolved Notice */
+.edit-damaged-product-resolved-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #dcfce7;
+    border: 1px solid #22c55e;
+    border-radius: 8px;
+    color: #166534;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.edit-damaged-product-resolved-icon {
+    color: #22c55e;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .edit-damaged-product-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .edit-damaged-product-sidebar {
+        width: 100%;
+        position: static;
+        flex-direction: row;
+    }
+
+    .edit-damaged-product-status-section,
+    .edit-damaged-product-actions-section {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .edit-damaged-product-view {
+        padding: 1rem 0;
+    }
+
+    .edit-damaged-product-page-header {
+        padding: 1rem;
+    }
+
+    .edit-damaged-product-content {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .edit-damaged-product-form-section {
+        padding: 1.5rem;
+    }
+
+    .edit-damaged-product-form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .edit-damaged-product-sidebar {
+        flex-direction: column;
+    }
+
+    .edit-damaged-product-status-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .edit-damaged-product-page-title {
+        font-size: 1.5rem;
+    }
+
+    .edit-damaged-product-form-section {
+        padding: 1rem;
+    }
+
+    .edit-damaged-product-status-section,
+    .edit-damaged-product-actions-section {
+        padding: 1rem;
+    }
+}

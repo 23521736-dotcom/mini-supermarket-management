@@ -37,6 +37,7 @@ import RecordDamagedProduct from "./views/merchandise-supervisor/damaged-product
 import AddShelfProduct from "./views/merchandise-supervisor/products-on-shelves/AddShelfProduct";
 import EditDamagedProduct from "./views/merchandise-supervisor/damaged-products/EditDamagedProduct";
 import EditShelfProduct from "./views/merchandise-supervisor/products-on-shelves/EditShelfProduct";
+import CreateInvoice from "./views/cashier/invoice-management/CreateInvoice";
 function App() {
   return (
     <Router>
@@ -335,6 +336,15 @@ function App() {
             element={
               <Layout>
                 <InvoiceListView />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/invoice/create"
+            element={
+              <Layout>
+                <CreateInvoice />
               </Layout>
             }
           />

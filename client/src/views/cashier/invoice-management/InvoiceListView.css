@@ -118,6 +118,36 @@
     flex: 1;
 }
 
+.invoice-right-actions {
+    display: flex;
+    align-items: center;
+}
+
+.invoice-create-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.invoice-create-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.invoice-create-icon {
+    font-size: 0.75rem;
+}
+
 .invoice-search-container {
     position: relative;
     flex: 1;

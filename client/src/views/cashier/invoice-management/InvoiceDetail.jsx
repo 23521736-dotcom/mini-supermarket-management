@@ -6,6 +6,7 @@ import {
   FaUser,
   FaReceipt,
   FaEdit,
+  FaSearch,
 } from "react-icons/fa";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import "./InvoiceDetail.css";
@@ -30,10 +31,158 @@ const InvoiceDetail = () => {
   // Modal state for cancel confirmation
   const [showCancelModal, setShowCancelModal] = useState(false);
 
+  // Customer search states
+  const [customerSearchTerm, setCustomerSearchTerm] = useState("");
+  const [showCustomerList, setShowCustomerList] = useState(false);
+
   // Payment method state - can be changed if status is pending
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(
     invoiceData.paymentMethod
   );
+
+  // Available customers for selection
+  const [availableCustomers] = useState([
+    {
+      id: "CUST-001",
+      name: "John Doe",
+      email: "john.doe@email.com",
+      phone: "+1 (555) 123-4567",
+      type: "Regular",
+    },
+    {
+      id: "CUST-002",
+      name: "Emma Wilson",
+      email: "emma.wilson@email.com",
+      phone: "+1 (555) 987-6543",
+      type: "VIP",
+    },
+    {
+      id: "CUST-003",
+      name: "Mike Johnson",
+      email: "mike.johnson@email.com",
+      phone: "+1 (555) 456-7890",
+      type: "Regular",
+    },
+    {
+      id: "CUST-004",
+      name: "Sarah Smith",
+      email: "sarah.smith@email.com",
+      phone: "+1 (555) 321-0987",
+      type: "VIP",
+    },
+    {
+      id: "CUST-005",
+      name: "David Lee",
+      email: "david.lee@email.com",
+      phone: "+1 (555) 654-3210",
+      type: "Regular",
+    },
+    {
+      id: "CUST-006",
+      name: "Maria Garcia",
+      email: "maria.garcia@email.com",
+      phone: "+1 (555) 789-0123",
+      type: "Premium",
+    },
+    {
+      id: "CUST-007",
+      name: "Robert Brown",
+      email: "robert.brown@email.com",
+      phone: "+1 (555) 234-5678",
+      type: "VIP",
+    },
+    {
+      id: "CUST-008",
+      name: "Alice Cooper",
+      email: "alice.cooper@email.com",
+      phone: "+1 (555) 345-6789",
+      type: "Regular",
+    },
+    {
+      id: "CUST-009",
+      name: "Tom Anderson",
+      email: "tom.anderson@email.com",
+      phone: "+1 (555) 456-7890",
+      type: "Premium",
+    },
+    {
+      id: "CUST-010",
+      name: "Lisa Wang",
+      email: "lisa.wang@email.com",
+      phone: "+1 (555) 567-8901",
+      type: "VIP",
+    },
+    {
+      id: "CUST-011",
+      name: "James Wilson",
+      email: "james.wilson@email.com",
+      phone: "+1 (555) 678-9012",
+      type: "Regular",
+    },
+    {
+      id: "CUST-012",
+      name: "Jennifer Martinez",
+      email: "jennifer.martinez@email.com",
+      phone: "+1 (555) 789-0123",
+      type: "Premium",
+    },
+    {
+      id: "CUST-013",
+      name: "Chris Taylor",
+      email: "chris.taylor@email.com",
+      phone: "+1 (555) 890-1234",
+      type: "Regular",
+    },
+    {
+      id: "CUST-014",
+      name: "Amanda Johnson",
+      email: "amanda.johnson@email.com",
+      phone: "+1 (555) 901-2345",
+      type: "VIP",
+    },
+    {
+      id: "CUST-015",
+      name: "Kevin Zhang",
+      email: "kevin.zhang@email.com",
+      phone: "+1 (555) 012-3456",
+      type: "Premium",
+    },
+    {
+      id: "CUST-016",
+      name: "Michelle Davis",
+      email: "michelle.davis@email.com",
+      phone: "+1 (555) 123-4567",
+      type: "Regular",
+    },
+    {
+      id: "CUST-017",
+      name: "Steven Miller",
+      email: "steven.miller@email.com",
+      phone: "+1 (555) 234-5678",
+      type: "VIP",
+    },
+    {
+      id: "CUST-018",
+      name: "Rachel Green",
+      email: "rachel.green@email.com",
+      phone: "+1 (555) 345-6789",
+      type: "Premium",
+    },
+    {
+      id: "CUST-019",
+      name: "Daniel Kim",
+      email: "daniel.kim@email.com",
+      phone: "+1 (555) 456-7890",
+      type: "Regular",
+    },
+    {
+      id: "CUST-020",
+      name: "Nicole Thompson",
+      email: "nicole.thompson@email.com",
+      phone: "+1 (555) 567-8901",
+      type: "VIP",
+    },
+  ]);
 
   // Available payment methods
   const paymentMethods = [
@@ -137,7 +286,43 @@ const InvoiceDetail = () => {
   const taxAmount = subtotal * taxRate;
   const totalAmount = subtotal - discountAmount + taxAmount;
 
+  // Filter available customers
+  const filteredCustomers = availableCustomers.filter((customer) => {
+    const matchesSearch =
+      customer.name.toLowerCase().includes(customerSearchTerm.toLowerCase()) ||
+      customer.id.toLowerCase().includes(customerSearchTerm.toLowerCase());
+    return matchesSearch;
+  });
+
   // Product list is readonly - no modifications allowed
+
+  const handleSelectCustomer = (customer) => {
+    if (invoiceData.status === "pending") {
+      setCustomerInfo({
+        id: customer.id,
+        type: "Registered Customer",
+        name: customer.name,
+        description: `${customer.type} customer`,
+        contact: customer.email,
+        hasInfo: true,
+      });
+      setShowCustomerList(false);
+      setCustomerSearchTerm("");
+    }
+  };
+
+  const handleClearCustomer = () => {
+    if (invoiceData.status === "pending") {
+      setCustomerInfo({
+        id: null,
+        type: "Guest Customer",
+        name: "Guest Customer",
+        description: "Walk-in customer",
+        contact: "No contact information",
+        hasInfo: false,
+      });
+    }
+  };
 
   const handleCustomerAction = () => {
     if (customerInfo.hasInfo) {
@@ -147,13 +332,6 @@ const InvoiceDetail = () => {
       // Navigate to add customer
       navigate("/customer/add");
     }
-  };
-
-  const handlePromotionAction = () => {
-    // Navigate to promotion selection page
-    navigate("/promotion-selection", {
-      state: { invoiceId },
-    });
   };
 
   const handleRemovePromotion = () => {
@@ -285,25 +463,105 @@ const InvoiceDetail = () => {
           <div className="invoice-form-section">
             <div className="invoice-section-header">
               <h2 className="invoice-section-title">Customer Information</h2>
-              <button
-                className={`invoice-customer-action-btn ${
-                  customerInfo.hasInfo ? "edit" : "add"
-                }`}
-                onClick={handleCustomerAction}
-              >
-                {customerInfo.hasInfo ? (
-                  <>
-                    <FaEdit className="invoice-action-icon" />
-                    Edit Customer
-                  </>
-                ) : (
-                  <>
-                    <FaPlus className="invoice-action-icon" />
-                    Add Customer
-                  </>
-                )}
-              </button>
+              {invoiceData.status === "pending" && (
+                <div className="invoice-customer-controls">
+                  <div className="invoice-customer-search-container">
+                    <FaSearch className="invoice-customer-search-icon" />
+                    <input
+                      type="text"
+                      placeholder="Search customer by name or ID..."
+                      value={customerSearchTerm}
+                      onChange={(e) => {
+                        setCustomerSearchTerm(e.target.value);
+                        setShowCustomerList(e.target.value.length > 0);
+                      }}
+                      onFocus={() =>
+                        setShowCustomerList(customerSearchTerm.length > 0)
+                      }
+                      className="invoice-customer-search-input"
+                    />
+                  </div>
+                  <button
+                    className={`invoice-customer-action-btn ${
+                      customerInfo.hasInfo ? "edit" : "add"
+                    }`}
+                    onClick={handleCustomerAction}
+                  >
+                    {customerInfo.hasInfo ? (
+                      <>
+                        <FaEdit className="invoice-action-icon" />
+                        Edit
+                      </>
+                    ) : (
+                      <>
+                        <FaPlus className="invoice-action-icon" />
+                        Add New
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
+              {invoiceData.status !== "pending" && (
+                <button
+                  className={`invoice-customer-action-btn ${
+                    customerInfo.hasInfo ? "edit" : "add"
+                  }`}
+                  onClick={handleCustomerAction}
+                >
+                  {customerInfo.hasInfo ? (
+                    <>
+                      <FaEdit className="invoice-action-icon" />
+                      Edit Customer
+                    </>
+                  ) : (
+                    <>
+                      <FaPlus className="invoice-action-icon" />
+                      Add Customer
+                    </>
+                  )}
+                </button>
+              )}
             </div>
+
+            {/* Customer Search Results */}
+            {showCustomerList && invoiceData.status === "pending" && (
+              <div className="invoice-customer-search-results">
+                {filteredCustomers.map((customer) => (
+                  <div
+                    key={customer.id}
+                    className="invoice-customer-result-item"
+                    onClick={() => handleSelectCustomer(customer)}
+                  >
+                    <div className="invoice-customer-avatar-small">
+                      {customer.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                        .toUpperCase()}
+                    </div>
+                    <div className="invoice-customer-result-details">
+                      <div className="invoice-customer-result-name">
+                        {customer.name}
+                      </div>
+                      <div className="invoice-customer-result-info">
+                        {customer.id} • {customer.email}
+                      </div>
+                    </div>
+                    <div
+                      className="invoice-customer-type-badge"
+                      data-type={customer.type}
+                    >
+                      {customer.type}
+                    </div>
+                  </div>
+                ))}
+                {filteredCustomers.length === 0 && (
+                  <div className="invoice-no-customer-results">
+                    No customers found
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="invoice-customer-card">
               <div className="invoice-customer-avatar">
@@ -326,6 +584,15 @@ const InvoiceDetail = () => {
                   {customerInfo.contact}
                 </p>
               </div>
+              {customerInfo.hasInfo && invoiceData.status === "pending" && (
+                <button
+                  className="invoice-clear-customer-btn"
+                  onClick={handleClearCustomer}
+                  title="Clear customer"
+                >
+                  <FaTrash />
+                </button>
+              )}
             </div>
           </div>
 
@@ -333,26 +600,6 @@ const InvoiceDetail = () => {
           <div className="invoice-form-section">
             <div className="invoice-section-header">
               <h2 className="invoice-section-title">Discount & Promotion</h2>
-              {invoiceData.status === "pending" && (
-                <button
-                  className={`invoice-promotion-action-btn ${
-                    discount ? "change" : "add"
-                  }`}
-                  onClick={handlePromotionAction}
-                >
-                  {discount ? (
-                    <>
-                      <FaEdit className="invoice-action-icon" />
-                      Change
-                    </>
-                  ) : (
-                    <>
-                      <FaPlus className="invoice-action-icon" />
-                      Add
-                    </>
-                  )}
-                </button>
-              )}
             </div>
 
             {discount ? (

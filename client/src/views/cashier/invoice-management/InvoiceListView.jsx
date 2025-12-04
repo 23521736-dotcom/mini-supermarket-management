@@ -389,6 +389,15 @@ const InvoiceListView = () => {
             </select>
           </div>
         </div>
+
+        <div className="invoice-right-actions">
+          <button
+            className="invoice-create-btn"
+            onClick={() => navigate("/invoice/create")}
+          >
+            Create Invoice
+          </button>
+        </div>
       </div>
 
       {/* Table */}

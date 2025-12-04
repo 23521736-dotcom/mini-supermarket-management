@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaArrowLeft,
   FaMapMarkerAlt,
@@ -8,11 +8,13 @@ import {
   FaCheck,
 } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
+import ConfirmationModal from "../../../components/DeliveryOrderModal/ConfirmationModal";
 import "./AssignedOrderDetail.css";
 
 const AssignedOrderDetail = () => {
   const navigate = useNavigate();
   const { orderId } = useParams();
+  const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
 
   // Sample order data - in real app, fetch by orderId
   const orderData = {
@@ -81,8 +83,18 @@ const AssignedOrderDetail = () => {
   };
 
   const handleConfirmPickup = () => {
+    setIsConfirmationModalOpen(true);
+  };
+
+  const handleConfirmPickupAction = () => {
     console.log("Confirming pickup for order:", orderData.id);
     // Add pickup confirmation logic here
+    // You can add API call here to update order status
+    alert("Order pickup confirmed successfully!");
+  };
+
+  const handleCloseConfirmationModal = () => {
+    setIsConfirmationModalOpen(false);
   };
 
   const handleReportIssue = () => {
@@ -245,6 +257,14 @@ const AssignedOrderDetail = () => {
           </button>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={isConfirmationModalOpen}
+        onClose={handleCloseConfirmationModal}
+        onConfirm={handleConfirmPickupAction}
+        orderData={orderData}
+      />
     </div>
   );
 };

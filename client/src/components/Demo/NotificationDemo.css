@@ -1,0 +1,97 @@
+/* NotificationDemo.css */
+.notification-demo {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.demo-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.demo-header h2 {
+    color: #1f2937;
+    margin: 0 0 8px 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.demo-header p {
+    color: #6b7280;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.demo-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.button-group {
+    text-align: center;
+}
+
+.button-group h3 {
+    color: #374151;
+    margin: 0 0 20px 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.demo-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.success-btn {
+    background-color: #22c55e;
+    color: white;
+}
+
+.success-btn:hover {
+    background-color: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.error-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.error-btn:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.demo-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .demo-buttons {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .notification-demo {
+        padding: 20px 15px;
+    }
+
+    .demo-header h2 {
+        font-size: 1.75rem;
+    }
+}

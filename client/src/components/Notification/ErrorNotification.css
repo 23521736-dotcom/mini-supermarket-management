@@ -1,0 +1,173 @@
+/* ErrorNotification.css */
+.error-notification-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.error-notification-overlay.show {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.error-notification {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(239, 68, 68, 0.15), 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #fecaca;
+    min-width: 350px;
+    max-width: 450px;
+    overflow: hidden;
+    position: relative;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.error-notification.slide-in {
+    transform: translateX(0);
+}
+
+.error-notification.slide-out {
+    transform: translateX(100%);
+}
+
+.error-notification-content {
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+}
+
+.error-icon-container {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.error-icon {
+    font-size: 24px;
+    color: #ef4444;
+    filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.2));
+}
+
+.error-message-container {
+    flex: 1;
+    min-width: 0;
+}
+
+.error-title {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #991b1b;
+    line-height: 1.3;
+}
+
+.error-message {
+    margin: 0;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.error-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    color: #6b7280;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.error-close-btn:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+    transform: scale(1.1);
+}
+
+.error-close-btn:active {
+    transform: scale(0.95);
+}
+
+.error-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    width: 100%;
+    transform-origin: left;
+    animation: progressShrink linear forwards;
+    border-radius: 0 0 12px 12px;
+}
+
+@keyframes progressShrink {
+    from {
+        transform: scaleX(1);
+    }
+
+    to {
+        transform: scaleX(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .error-notification-overlay {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .error-notification {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+    }
+
+    .error-notification-content {
+        padding: 14px 16px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .error-notification {
+        background: #1f2937;
+        border-color: #ef4444;
+        box-shadow: 0 10px 40px rgba(239, 68, 68, 0.25), 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .error-title {
+        color: #fecaca;
+    }
+
+    .error-message {
+        color: #e5e7eb;
+    }
+
+    .error-close-btn {
+        color: #9ca3af;
+    }
+
+    .error-close-btn:hover {
+        background-color: #374151;
+        color: #e5e7eb;
+    }
+}

@@ -8,6 +8,63 @@ import ErrorMessage from "../../components/Messages/ErrorMessage";
 import apiClient from "../../services/apiClient";
 import "./SignIn.css";
 
+const DEMO_ACCOUNTS = {
+  customer: [
+    {
+      group: "Customer Accounts",
+      icon: "🛒",
+      accounts: [
+        { username: "customer1", password: "password123", label: "Customer 1", badge: "Gold", badgeColor: "#f59e0b" },
+        { username: "customer2", password: "password123", label: "Customer 2", badge: "Silver", badgeColor: "#6b7280" },
+        { username: "customer3", password: "password123", label: "Customer 3", badge: "Gold", badgeColor: "#f59e0b" },
+        { username: "customer4", password: "password123", label: "Customer 4", badge: "Standard", badgeColor: "#3b82f6" },
+      ],
+    },
+  ],
+  staff: [
+    {
+      group: "Manager",
+      icon: "👔",
+      accounts: [
+        { username: "manager1", password: "password123", label: "Manager 1", badge: "Superuser", badgeColor: "#7c3aed" },
+        { username: "manager2", password: "password123", label: "Manager 2", badge: "Manager", badgeColor: "#7c3aed" },
+      ],
+    },
+    {
+      group: "Cashier",
+      icon: "💰",
+      accounts: [
+        { username: "cashier1", password: "password123", label: "Nguyễn Văn An" },
+        { username: "cashier2", password: "password123", label: "Phạm Thị Dung" },
+      ],
+    },
+    {
+      group: "Merchandise Supervisor",
+      icon: "📦",
+      accounts: [
+        { username: "supervisor1", password: "password123", label: "Hoàng Văn Em" },
+        { username: "supervisor2", password: "password123", label: "Trần Thị Lan" },
+      ],
+    },
+    {
+      group: "Warehouse Staff",
+      icon: "📊",
+      accounts: [
+        { username: "warehouse1", password: "password123", label: "Đinh Văn Phúc" },
+        { username: "warehouse2", password: "password123", label: "Bùi Thị Giang" },
+      ],
+    },
+    {
+      group: "Delivery Staff",
+      icon: "🚚",
+      accounts: [
+        { username: "delivery1", password: "password123", label: "Lê Văn Cường" },
+        { username: "delivery2", password: "password123", label: "Hoàng Minh Tuấn" },
+      ],
+    },
+  ],
+};
+
 const SignIn = () => {
   // Load remembered credentials from localStorage
   const getRememberedCredentials = () => {
@@ -36,7 +93,12 @@ const SignIn = () => {
   const [activeTab, setActiveTab] = useState(getRememberedTab);
   const [formData, setFormData] = useState(getRememberedCredentials);
   const [errorMessage, setErrorMessage] = useState("");
+  const [showDemo, setShowDemo] = useState(false);
   const navigate = useNavigate();
+
+  const fillAccount = (username, password) => {
+    setFormData((prev) => ({ ...prev, username, password }));
+  };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -292,36 +354,55 @@ const SignIn = () => {
           )}
         </div>
 
-        {/* Demo Accounts Information */}
-        {/* <div className="demo-accounts">
-          <h4>Demo Accounts:</h4>
+        {/* Demo Accounts Panel */}
+        <div className="demo-accounts">
+          <button
+            type="button"
+            className="demo-toggle"
+            onClick={() => setShowDemo((v) => !v)}
+          >
+            <span className="demo-toggle-icon">🧪</span>
+            <span>Demo Accounts</span>
+            <span className={`demo-arrow ${showDemo ? "open" : ""}`}>▾</span>
+          </button>
 
-          {activeTab === "staff" ? (
-            <div className="accounts-grid">
-              <div className="account-item">
-                <strong>Manager:</strong> admin / admin123
-              </div>
-              <div className="account-item">
-                <strong>Delivery:</strong> delivery / delivery123
-              </div>
-              <div className="account-item">
-                <strong>Merchandise:</strong> merchandise / merchandise123
-              </div>
-              <div className="account-item">
-                <strong>Warehouse:</strong> warehouse / warehouse123
-              </div>
-              <div className="account-item">
-                <strong>Cashier:</strong> cashier / cashier123
-              </div>
-            </div>
-          ) : (
-            <div className="accounts-grid">
-              <div className="account-item">
-                <strong>Customer:</strong> customer1 / customer123
-              </div>
+          {showDemo && (
+            <div className="demo-body">
+              <p className="demo-hint">Click một tài khoản để điền tự động</p>
+              {DEMO_ACCOUNTS[activeTab].map((group) => (
+                <div key={group.group} className="demo-group">
+                  <div className="demo-group-title">
+                    <span>{group.icon}</span>
+                    <span>{group.group}</span>
+                  </div>
+                  <div className="demo-accounts-list">
+                    {group.accounts.map((acc) => (
+                      <button
+                        key={acc.username}
+                        type="button"
+                        className="demo-account-btn"
+                        onClick={() => fillAccount(acc.username, acc.password)}
+                      >
+                        <div className="demo-acc-info">
+                          <span className="demo-acc-name">{acc.label}</span>
+                          <span className="demo-acc-user">@{acc.username}</span>
+                        </div>
+                        {acc.badge && (
+                          <span
+                            className="demo-acc-badge"
+                            style={{ background: acc.badgeColor }}
+                          >
+                            {acc.badge}
+                          </span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );
